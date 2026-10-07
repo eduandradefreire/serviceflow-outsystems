@@ -1,22 +1,12 @@
 # ServiceFlow - OutSystems
 
-Projeto desenvolvido como parte dos meus estudos em OutSystems.
+Projeto prático desenvolvido em OutSystems para consolidar conceitos de arquitetura, CRUD, validações, tratamento de erros, auditoria e relacionamentos entre entidades.
 
-O objetivo é aplicar na prática conceitos de:
+## Objetivo
 
-- Modelagem de dados
-- CRUD
-- Service Actions
-- Validações
-- Tratamento de erros
-- Auditoria
-- Soft Delete
-- Relacionamento entre entidades
-- Organização de arquitetura
+Construir uma aplicação de gestão de assistência técnica, permitindo o cadastro de clientes, equipamentos e, nas próximas etapas, ordens de serviço.
 
-## Status
-
-Em desenvolvimento.
+O projeto também está sendo utilizado como portfólio de estudos e evolução prática em OutSystems.
 
 ## Funcionalidades implementadas
 
@@ -24,26 +14,45 @@ Em desenvolvimento.
 
 - Cadastro de clientes
 - Edição de clientes
+- Soft Delete
+- Validação de campos obrigatórios
 - Validação de CPF
 - Validação de CPF duplicado
 - Tratamento de erros
-
-## Em desenvolvimento
+- Auditoria com CreatedOn, CreatedBy, UpdatedOn e UpdatedBy
 
 ### Device
 
 - Relacionamento Customer → Device
-- Device_SaveCore
-- Device_Validation
-- Device_Save
-- Device_SoftDelete
+- Cadastro de equipamentos
+- Edição de equipamentos
+- Soft Delete
+- Listagem de equipamentos por cliente
+- Validação de cliente
+- Validação de tipo de equipamento
+- Validação de marca e modelo
+- Validação de Serial Number duplicado
+- Tratamento de erros
+- Auditoria com CreatedOn, CreatedBy, UpdatedOn e UpdatedBy
 
-## Tecnologias
+## Arquitetura
 
-- OutSystems
-- Service Studio
-- GitHub
+O projeto segue um padrão de separação de responsabilidades inspirado na Trusted Academy.
 
-## Objetivo
+Exemplo utilizado nos módulos de Customer e Device:
 
-Este projeto faz parte da minha evolução prática em desenvolvimento OutSystems e será atualizado conforme novas funcionalidades forem implementadas.
+- `Validation` — regras de validação
+- `Save` — orquestração do fluxo
+- `SaveCore` — persistência e auditoria
+- `SoftDelete` — desativação lógica do registro
+
+Esse padrão permite manter as regras de negócio organizadas e reaproveitáveis.
+
+## Fluxo atual
+
+```text
+Customer
+   ↓
+Device
+   ↓
+ServiceOrder
