@@ -48,11 +48,20 @@ Exemplo utilizado nos módulos de Customer e Device:
 
 Esse padrão permite manter as regras de negócio organizadas e reaproveitáveis.
 
-## Fluxo atual
+## Screenshots
 
-```text
-Customer
-   ↓
-Device
-   ↓
-ServiceOrder
+### Customers
+Tela de clientes com acesso aos equipamentos, edição e Soft Delete.
+
+![Customers](docs/screenshots/customers.png)
+
+### Device List
+Listagem dos equipamentos vinculados ao cliente selecionado.
+
+![Device List](docs/screenshots/device-list.png)
+
+### Device Detail
+Cadastro e edição de equipamentos com validações de negócio.
+
+![Device Detail](docs/screenshots/device-detail.png)
+
